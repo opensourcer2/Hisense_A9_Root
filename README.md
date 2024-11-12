@@ -111,29 +111,29 @@ There you have it, you now have a superb, rooted eInk phone with all the comfort
 
 ## FAQ
 
-Q: My OS version number is neither L2037.6.08.01.00 or L2037.6.04.06.00. Which boot.img do I use?
+##### ❓➡️ My OS version number is neither L2037.6.08.01.00 or L2037.6.04.06.00. Which boot.img do I use?
 
-A: Neither. Using an incompatible boot.img causes you to lose WiFi. I would suggest updating your A9 to the latest version (L2037.6.08.01.00) by navigating to Settings > System & Updates > System updates. If you're upgrading from the earliest firmware, then you have to do a number of incrimental updates to get to the latest version. There is no combo update. Once you're there, then you can use the latest boot.img.
+🗣️➡️ Neither. Using an incompatible boot.img causes you to lose WiFi. I would suggest updating your A9 to the latest version (L2037.6.08.01.00) by navigating to Settings > System & Updates > System updates. If you're upgrading from the earliest firmware, then you have to do a number of incrimental updates to get to the latest version. There is no combo update. Once you're there, then you can use the latest boot.img.
 
-Q: I successfully installed the modified boot.img, but Magisk isn't detecting the install. How do I fix this?
+#### ❓➡️ I successfully installed the modified boot.img, but Magisk isn't detecting the install. How do I fix this?
 
-A: This is a common problem. Uninstall Magisk and reboot your phone. A special installation app will appear in its place. Use this to reinstall Magisk, which will then prompt you to reboot a final time.
+🗣️➡️ This is a common problem. Uninstall Magisk and reboot your phone. A special installation app will appear in its place. Use this to reinstall Magisk, which will then prompt you to reboot a final time.
 
-Q: Does rooting fix the problem of multi-tasking when I use a third party launcher?
+#### ❓➡️ Does rooting fix the problem of multi-tasking when I use a third party launcher?
 
-A: No, sadly. App switching is built into the A9's launcher, though people have been exploring workarounds on XDA.
+🗣️➡️ No, sadly. App switching is built into the A9's launcher, though people have been exploring workarounds on XDA.
 
-Q: Do I need an EDL cable?
+#### ❓➡️ Do I need an EDL cable?
 
-A: No. This method is tested and working with the included USB-C cable that came with your A9.
+🗣️➡️ No. This method is tested and working with the included USB-C cable that came with your A9.
 
-Q: Wait, what's an EDL cable?
+#### ❓➡️ Wait, what's an EDL cable?
 
-A: An EDL cable is designed for all Qualcomm phones to put them into Deep Flash Mode, also called Qualcomm 9008 Mode. You only need this cable if you've bricked your phone. Speaking of which...
+🗣️➡️ An EDL cable is designed for all Qualcomm phones to put them into Deep Flash Mode, also called Qualcomm 9008 Mode. You only need this cable if you've bricked your phone. Speaking of which...
 
-Q: Things have gone terribly wrong. How do I get back to stock after bricking my phone?
+#### ❓➡️ Things have gone terribly wrong. How do I get back to stock after bricking my phone?
 
-A: Alas, you now need an EDL cable. This is because Hisense doesn't provide conventional .zip files with their full ROM's. This means that we can't use more conventional flashing methods, leaving us with just one option: Qualcomm's EDL mode.
+🗣️➡️ Alas, you now need an EDL cable. This is because Hisense doesn't provide conventional .zip files with their full ROM's. This means that we can't use more conventional flashing methods, leaving us with just one option: Qualcomm's EDL mode.
 
 Before we begin, there are a number of dependencies you need to acquire. EDL tools exist for Windows and Linux (like QDL for Linux), but the instructions here will assume you have Windows.
 
@@ -141,41 +141,41 @@ If you do have Linux, check out the XDA thread, as one of the members was able t
 
 Here's what you need to do:
 
-    Download and install the following software, where applicable:
+1. Download and install the following software, where applicable:
 
-        The Hisense A9 firmware, which you can find here.
+   - The Hisense A9 firmware, which you can find here.
 
-        QFIL 2.0.3.5
+   - QFIL 2.0.3.5
 
-        Qualcomm HS-USB QDLoader 9008 Driver
+   - Qualcomm HS-USB QDLoader 9008 Driver
 
-    Reboot your computer.
+1. Reboot your computer.
 
-    Unzip the RAR files. This is achieved simply by clicking the first one and then the software will figure out the rest.
+1. Unzip the RAR files. This is achieved simply by clicking the first one and then the software will figure out the rest.
 
-    Open QFIL and select the following options:
+1. Open QFIL and select the following options:
 
-        Select Build Type - Flat Build
+   - Select Build Type - Flat Build
 
-        Programmer Path: Browse and select the prog_firehose_ddr_001360E1.elf file from the extracted firmware file.
+   - Programmer Path: Browse and select the prog_firehose_ddr_001360E1.elf file from the extracted firmware file.
 
-        Load XML: Select rawprogram0_001360E1 to rawprogram5_001360E1. You don't need to select rawprogram_unspare0. Select patch0 to patch5.
+   - Load XML: Select rawprogram0_001360E1 to rawprogram5_001360E1. You don't need to select rawprogram_unspare0. Select patch0 to patch5.
 
-        Storage Type: UFS (located on the bottom right side)
+   - Storage Type: UFS (located on the bottom right side)
 
-    Put your phone into EDL mode. This is achieved by having it reboot with the EDL cable unplugged. Then plug in your cable, and hold the power button, volume up, volume down, and the button on your EDL cable. Wait until the backlight turns off, then count down from ten. If your screen freezes with the backlight off, congratulations, you are now in EDL mode.
+1. Put your phone into EDL mode. This is achieved by having it reboot with the EDL cable unplugged. Then plug in your cable, and hold the power button, volume up, volume down, and the button on your EDL cable. Wait until the backlight turns off, then count down from ten. If your screen freezes with the backlight off, congratulations, you are now in EDL mode.
 
-    You should now see your phone as an available port on QFIL. Click download.
+1. You should now see your phone as an available port on QFIL. Click download.
 
-        If it hangs and fails, put your phone into EDL again, or try using a standard USB-C cable for the download process.
+   - If it hangs and fails, put your phone into EDL again, or try using a standard USB-C cable for the download process.
 
-        If it succeeds and your phone starts boot looping into a screen which says "fastboot mode", follow Step 5 and 6 again. Pushing the firmware twice generally fixes the bootloop for some reason.
+   - If it succeeds and your phone starts boot looping into a screen which says "fastboot mode", follow Step 5 and 6 again. Pushing the firmware twice generally fixes the bootloop for some reason.
 
-    Turn your phone back on by holding the power button. You should now be directed to the setup screen.
+1. Turn your phone back on by holding the power button. You should now be directed to the setup screen.
 
-Q: I've tried every single APN configuration known to humankind and my phone still isn't connecting to LTE.
+#### ❓➡️ I've tried every single APN configuration known to humankind and my phone still isn't connecting to LTE.
 
-A: Like the United States, Chinese domestic market phones use bands which are very specific to their region. Here there is good news and bad news. On one hand, carriers like T-Mobile use TD-LTE B41, which the A9 supports. Unfortunately, TD-LTE B41 is a fairly rare band, and is mostly found in densely populated urban areas.
+🗣️➡️ Like the United States, Chinese domestic market phones use bands which are very specific to their region. Here there is good news and bad news. On one hand, carriers like T-Mobile use TD-LTE B41, which the A9 supports. Unfortunately, TD-LTE B41 is a fairly rare band, and is mostly found in densely populated urban areas.
 
 If you are up to the challenge, you can try to unlock more bands by modifying your EFS, or encrypted file system. I've played with this a little, but it's dangerous territory. The Hisense A9 does not repair its EFS on wipe, and a lot of the guides available online are out of date. I've already lost my IMEI on one phone, and haven't been able to restore it.
 
@@ -185,11 +185,11 @@ That being said, if you need your LTE bands to work at any cost, I would suggest
 
 Some final marginalia -- if you can no longer edit your NV items, you have not lost connectivity forever. Simply try restoring the QFIL backup you (hopefully) made earlier. If all else fails, you can perform a hard reset by doing the following:
 
-    `./adb reboot fastboot`
+    - `./adb reboot fastboot`
 
-    `./fastboot wipe modemst1`
+    - `./fastboot wipe modemst1`
 
-    `./fastboot wipe modemst2`
+    - `./fastboot wipe modemst2`
 
 This will reset your bad values and you will be able to reconnect to WiFi, if not cellular.
 
