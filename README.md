@@ -111,7 +111,7 @@ There you have it, you now have a superb, rooted eInk phone with all the comfort
 
 ## FAQ
 
-##### ❓➡️ My OS version number is neither L2037.6.08.01.00 or L2037.6.04.06.00. Which boot.img do I use?
+#### ❓➡️ My OS version number is neither L2037.6.08.01.00 or L2037.6.04.06.00. Which boot.img do I use?
 
 🗣️➡️ Neither. Using an incompatible boot.img causes you to lose WiFi. I would suggest updating your A9 to the latest version (L2037.6.08.01.00) by navigating to Settings > System & Updates > System updates. If you're upgrading from the earliest firmware, then you have to do a number of incrimental updates to get to the latest version. There is no combo update. Once you're there, then you can use the latest boot.img.
 
@@ -185,11 +185,11 @@ That being said, if you need your LTE bands to work at any cost, I would suggest
 
 Some final marginalia -- if you can no longer edit your NV items, you have not lost connectivity forever. Simply try restoring the QFIL backup you (hopefully) made earlier. If all else fails, you can perform a hard reset by doing the following:
 
-    - `./adb reboot fastboot`
+- `./adb reboot fastboot`
 
-    - `./fastboot wipe modemst1`
+- `./fastboot wipe modemst1`
 
-    - `./fastboot wipe modemst2`
+- `./fastboot wipe modemst2`
 
 This will reset your bad values and you will be able to reconnect to WiFi, if not cellular.
 
